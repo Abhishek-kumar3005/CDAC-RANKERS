@@ -1,0 +1,242 @@
+/* ===============================
+   DBDA PAGE BASE STYLES
+   =============================== */
+
+.dbda-page {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 40px 24px;
+  background: transparent;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.dbda-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.dbda-section {
+  margin-bottom: 40px;
+}
+
+.dbda-section h2 {
+  font-size: 22px;
+  color: #1a4ed8;
+  margin-bottom: 12px;
+}
+
+.dbda-section p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+}
+
+.dbda-image {
+  max-width: 100%;
+  margin-top: 20px;
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ===============================
+   DBDA LAYOUT (CLEAN SAFE)
+   =============================== */
+
+.dbda-layout {
+  position: relative;
+
+  /* ✅ Sidebar offset (single source) */
+  margin-left: 30px;
+
+  /* ✅ Reserve space for practice panel */
+  padding-right: 120px;
+
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Notes content */
+.dbda-main {
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* ===============================
+   PRACTICE TESTS SIDEBAR (DESKTOP)
+   =============================== */
+
+.dbda-practice {
+  position: fixed;
+
+  /* 🔹 Gap from top (below title/header) */
+  top: 150px;
+
+  right: 24px;
+  width: 220px;
+  padding-left: 16px;
+  border-left: 2px solid #e0e0e0;
+
+  height: auto;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+/* Heading */
+.dbda-practice h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* Practice items */
+.practice-item {
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.practice-item:hover {
+  color: #1a4ed8;
+  text-decoration: underline;
+}
+
+/* ===============================
+   HARD OVERRIDE (SAFETY NET)
+   =============================== */
+
+.dbda-practice,
+.dbda-practice * {
+  overflow: visible !important;
+}
+
+/* ===============================
+   SMALL LAPTOP SAFETY (14")
+   =============================== */
+
+@media (max-width: 1200px) {
+  .dbda-layout {
+    padding-right: 240px;
+  }
+
+  .dbda-practice {
+    width: 200px;
+    right: 16px;
+  }
+}
+
+/* ===============================
+   RESPONSIVE: MOBILE TEST DRAWER
+   =============================== */
+
+.desktop-only {
+  display: block;
+}
+
+/* 🔵 FLOATING TESTS BUTTON (MOBILE) */
+.practice-mobile-btn {
+  display: none;
+  position: fixed;
+
+  right: 16px;
+  bottom: 16px;
+
+  z-index: 1200;
+
+  padding: 14px 20px;
+  border-radius: 999px;
+  border: none;
+
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+
+  background: linear-gradient(135deg, #1a4ed8, #2563eb);
+  color: #fff;
+
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
+  cursor: pointer;
+}
+
+/* Overlay */
+.practice-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1100;
+}
+
+/* Bottom drawer */
+.practice-drawer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: #fff;
+  border-radius: 16px 16px 0 0;
+  padding: 16px 18px 24px;
+
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+/* Drawer header */
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.drawer-close {
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ===============================
+   MOBILE DATA VISIBILITY FIX
+   (TABLES + CODE BLOCKS)
+   =============================== */
+
+@media (max-width: 768px) {
+
+  /* Layout reset */
+  .dbda-layout {
+    margin-left: 0;
+    padding-right: 0;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .practice-mobile-btn {
+    display: block;
+  }
+
+  /* 🔥 TABLES: horizontal scroll (NO data loss) */
+  .dbda-main table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* 🔥 CODE BLOCKS: safe scroll */
+  .dbda-main pre {
+    overflow-x: auto;
+    max-width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    background: #f8fafc;
+  }
+
+  .dbda-main code {
+    white-space: pre;
+  }
+}
