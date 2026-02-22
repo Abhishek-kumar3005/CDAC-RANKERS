@@ -9,8 +9,8 @@ import base64
 router = APIRouter()
 
 # AWS keys from environment (HuggingFace Secrets)
-AWS_KEY = os.getenv("AKIA4OL4DZLNQHJ6UVJX")
-AWS_SECRET = os.getenv("mdTZ2Dht3UWmChLKtGv+wPxYntmWtfPRn3TRD2ev")
+AWS_KEY = os.getenv("AKIA4O**********")                   # use your own key for amazon rekognition service
+AWS_SECRET = os.getenv("mdTZ2Dht3UWmCh**************")    # use you own secrets for amazon rekognition service
 AWS_REGION = os.getenv("AWS_REGION", "ap-south-1")
 
 client = boto3.client(
@@ -115,3 +115,4 @@ async def analyze_face(file: UploadFile = File(...)):
         "face_count": len(results),
         "faces": results
     })
+
