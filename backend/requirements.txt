@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pillow
+numpy
+huggingface-hub
+tensorflow==2.19.0
+keras==3.10.0
+protobuf==3.20.*
+python-multipart
+ultralytics
+opencv-python-headless
+pytesseract
+boto3
